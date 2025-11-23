@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e depois</title>
+    <style>
+     h1{
+        font-family: Arial;
+        font-size: 40px;
+     }
+
+    .Cal {
+        padding: 20px;
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+
+    <input type="button" class="Cal" value="Antecessor e Sucessor" onclick="calcular()">
+
+    <script>
+        function calcular() {
+            let n = Number(prompt("Digite um número:"))
+
+            let antes = n - 1
+            let depois = n + 1
+
+            alert(`Antes de ${n}, temos ${antes}. depois de ${n} temos ${depois}.`)
+        }
+    </script>
+
+</body>
+</html>
