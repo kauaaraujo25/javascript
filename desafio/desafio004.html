@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Troco</title>
+    <style>
+        h1 {
+            font-family: Arial;
+        }
+        #c {
+         padding: 20px 20px;
+         font-size: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Calculando o troco</h1>
@@ -13,9 +22,19 @@
 
     <script>
         function comprar() {
-         let c = Number(prompt('Que produto você está comprando?'))
+         let c = window.prompt('Que produto você está comprando?')
+         let produto = Number(prompt('Quanto custa o produto que você está comprando?'))
+         let pagar = Number(prompt(`Qual foi o valor que você deu para pagar  ${c}`))
 
-        let v = number(prompt(`Quanto custa o ${produto} que voc^está comprando?`))
+             if (pagar < produto) {
+            window.alert('Valor insuficiente!')
+           } else {
+           let troco = pagar - produto 
+
+
+           alert(`Você comprou ${c} que custou ${produto}. Deu ${pagar} em dinheiro e vai receber ${troco} de troco. Volte Sempre!`)
+           }
+
         }
     </script>
 </body>
