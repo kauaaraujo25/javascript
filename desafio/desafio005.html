@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    .C {
+        padding: 10px;
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+
+    <input type="button" class="C" value="converter" onclick="converte()">
+
+    <div id="saida"></div>
+
+    <script>
+     function converte() {
+       let m = window.prompt('Digite uma distância em metros(m)')
+
+         let km = m / 1000;
+         let hm = m / 100;
+         let dam = m / 10;
+         let dm = m * 10;
+         let cm = m * 100;
+         let mm = m * 1000;
+
+         document.getElementById('saida').innerHTML = `
+             <h3> A distância de ${m} metros, corresponde a...</h3>
+             <p>${km} quilômentro (Km)</p>
+             <p>${hm} hectômentro (Hm)</p>
+             <p>${dam} decâmetros (Dam)</p>
+             <p>${dm} decímetros (dm)</p>
+             <p>${cm} centímetros (cm)</p>
+             <p>${mm} milímetros (mm)</p>`;
+
+     }
+    </script>
+</body>
+</html>
