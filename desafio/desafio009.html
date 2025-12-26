@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste de salario</title>
+    <style>
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+       #botão {
+        font-size: 20px;
+        padding: 10px;
+       }
+    </style>
+</head>
+<body>
+    <h1>Reajuste Salário</h1>
+    
+    <input type="button" id="botão" value="Reajustar Salário" onclick="sal()">
+    
+      <p>Clique no botão acima para iniciar.</p>
+
+     <div id="saida"></div>
+    <script>
+        function sal() {
+            let nome = window.prompt('Qual o nome do funcionário?')
+
+            let salario = Number(window.prompt(`Qual o salário de ${nome}?`))
+
+            let porcento = Number(window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`))
+
+            let reajuste = salario * porcento / 100
+            let salatual = salario + reajuste
+
+            document.getElementById('saida').innerHTML = 
+            `<h3> ${nome} recebeu um aumento salarial!</h3>
+            <p>O salário atual era ${salario}.</p>
+            <p>Com um aumento de ${porcento}%, o salário vai aumentar ${reajuste} no próximo mês.</p>
+            <p>E a partir daí, ${nome} vai passar a ganhar ${salatual}</p>`
+        }
+    </script>
+</body>
+</html>
