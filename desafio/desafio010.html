@@ -6,13 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bhaskara</title>
     <style>
-       
+
+    </style>
+    <style>
+
+       h1{
+          font-family: Arial, Helvetica, sans-serif;
+       }
+
+       #botão {
+            font-size: 20px;
+            padding: 10px;
+       }
+
+       .delta {
+        background-color: yellow;
+       }
     </style>
 </head>
 <body>
     <h1>Resolvendo Bhaskara</h1>
 
-    <input type="button" value="Calcular" onclick="calculo()">
+    <input type="button" id="botão" value="Calcular" onclick="calculo()">
 
     <div id="saida"></div>
     <script>
@@ -22,15 +37,21 @@
             let c = Number(window.prompt('Qual o valor de c?'))
 
             let bnum = b ** 2
-            let anum = -4 * a
-            let cnum = anum * c
+            let cnum = 4 * a * c
             
             let res = bnum - cnum
 
             document.getElementById('saida').innerHTML =
             `<h3>Resolvendo Bhaskara</h3>
-            <p>A equação atual é ${a}x<sup>2</sup>+${b}x+2=0</p> <p>O cálculo realizado será \u0394 =${b}<sup>2</sup>-4.${a}.${c}</p>
-            <p>O valor calculado foi \u0394= ${res} `
+
+            <p>A equação atual é ${a}x<sup>2</sup> + ${b}x + ${c}= 0</p>
+
+             <p>O cálculo realizado será Δ =${b}<sup>2</sup>-4 . ${a} .${c} </p>
+
+            <p>
+                O valor calculado foi 
+                <pan class="delta"> Δ= ${res}</span>
+            </p> `
         
         }
     </script>
