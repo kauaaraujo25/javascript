@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <input type="button" value="Verificar" onclick="preço()">
+
+    <p>Clique no botão acima para analisar a mudança de preço</p>
+  <div id="saida"></div>
+    <script>
+        function preço() {
+            let pa = Number(window.prompt('Qual o preço anterior do produto?'))
+            let pd = Number(window.prompt('Qual o preço atual do produto?'))
+            
+
+            if (pa < pd  ) {
+                let valor = pd - pa
+                let porcento = ((pd - pa) / pa) * 100 
+
+                 document.getElementById('saida').innerHTML = `O produto custava R$${pa},00 e agora custa R$${pd},00.
+                <p> Hoje o produto está mais caro.</p>
+                <p>O preço subiu R$${valor},00 em relação ao preço anterior.</p>
+                <p>Uma variação de ${porcento}% pra cima.</p> `
+            } if (pd < pa) {
+                let valor2 = pa - pd 
+                let porcento2 = ((pa - pd) / pa) * 100 
+
+                document.getElementById('saida').innerHTML =`O produto custava R$${pa},00 e agora custa R$${pd},00.
+                <p>Hoje o produto está mais barato.</p>
+                <p>O preço caiu R$${valor2},00 em relação ao preço anterior.</p>
+                <p>Uma variação de ${porcento2}% pra baixo.</p>`
+
+            }
+        }
+    </script>
+</body>
+</html>
